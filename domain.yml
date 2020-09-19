@@ -1,0 +1,28 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- is_bot
+- how_created
+- mint_student
+- ask_for_group
+- gender_female
+responses:
+  utter_i_am_a_bot:
+  - text: Ja ich bin ein Bot und entwickelt mit Rasa.
+  utter_created_by_steadforce:
+  - text: Meine Entwickler waren die Mitarbeiter von Steadforce
+  utter_confirm_group:
+  - buttons:
+    - payload: /mint_student
+      title: MINT-Student
+    - payload: /gender_female
+      title: Gender-Female
+    text: Welche Gruppe gehörst du?
+  utter_thank_for_choosing:
+  - text: Danke für Gruppenwählen!
+actions:
+- utter_i_am_a_bot
+- utter_created_by_steadforce
+- utter_confirm_group
+- utter_thank_for_choosing
